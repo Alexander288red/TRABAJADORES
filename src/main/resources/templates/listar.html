@@ -2,11 +2,108 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Lista de Trabajadores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        td a {
+            display: inline-block;
+            margin-right: 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+            text-decoration: none;
+            color: white;
+            border-radius: 5px;
+        }
+
+        td a:first-child {
+            background-color: #28a745; /* Verde para "Editar" */
+        }
+
+        td a:first-child:hover {
+            background-color: #218838;
+        }
+
+        td a:last-child {
+            background-color: #dc3545; /* Rojo para "Eliminar" */
+        }
+
+        td a:last-child:hover {
+            background-color: #c82333;
+        }
+
+        @media (max-width: 768px) {
+            table {
+                font-size: 12px;
+            }
+
+            a {
+                font-size: 12px;
+            }
+
+            td a {
+                font-size: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Lista de Trabajadores</h1>
     <a href="/trabajadores/nuevo">Registrar Nuevo</a>
-    <table border="1">
+    <table>
         <thead>
             <tr>
                 <th>ID</th>
